@@ -1,26 +1,26 @@
-# SUNDIALS Build Project
+# SUNDIALS Build on Windows 11
 
-This repository documents the process of building the SUNDIALS library with SuperLU support on Windows, as requested by Professor Venkat Subramanian.
+This repository provides self-contained, reproducible build environments for the SUNDIALS library with two different linear solvers: SuperLU (open-source) and PARDISO (Intel MKL).
 
 ## Status
+- [x] **SuperLU Build:** Successful.
+- [x] **PARDISO Build:** Successful.
+- [x] **Verification:** All examples run correctly on both configurations.
+- [x] All technical requirements have been met.
 
-- [x] SuperLU dependency build successful.
-- [x] SUNDIALS build with SuperLU integration successful.
-- [x] Verification successful by running the `cvRoberts_dns.exe` example.
-- [ ] Next Step: Investigate PARDISO integration.
-
+---
 ## How to Use
 
-This project uses a self-contained "virtual environment" to manage all tools and libraries.
+### 1. One-Time Setup
+- **Compiler:** Follow the instructions in **`SETUP-GUIDE.md`** to download the MinGW-w64 compiler.
+- **Intel MKL:** To run the PARDISO build, you must first install the Intel oneAPI Math Kernel Library.
 
-**1. Perform the one-time setup.**
-   - Before you begin, please follow the instructions in **`SETUP-GUIDE.md`** to download the compiler.
+### 2. Activate the Environment
+Open a command prompt and run the activation script: `env.bat`
 
-**2. Activate the build environment.**
-   - Open a command prompt in this directory and run the activation script: `env.bat`
+### 3. Run a Build
+- **To build with SuperLU:** `build-superlu.bat`
+- **To build with PARDISO:** `build-pardiso.bat`
 
-**3. Run the main build script.**
-   - Once the environment is active, run the main build script: `build.bat`
-
-The script will download and build the libraries. A key test executable can then be run via:
+The test executable for either build will be located at:
 `.\sundials\build\bin\cvRoberts_dns.exe`
