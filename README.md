@@ -1,29 +1,26 @@
-# SUNDIALS Build on Windows 11
+# SUNDIALS Build Project
 
-This repository provides a self-contained, reproducible build environment for the SUNDIALS library with SuperLU support on Windows 11.
+This repository documents the process of building the SUNDIALS library with SuperLU support on Windows, as requested by Professor Venkat Subramanian.
 
 ## Status
-*   **Build:** Successful.
-*   **Verification:** The `cvRoberts_dns.exe` example runs correctly.
 
----
+- [x] SuperLU dependency build successful.
+- [x] SUNDIALS build with SuperLU integration successful.
+- [x] Verification successful by running the `cvRoberts_dns.exe` example.
+- [ ] Next Step: Investigate PARDISO integration.
+
 ## How to Use
 
-This project uses a "virtual environment" approach, keeping all tools and libraries within this directory.
+This project uses a self-contained "virtual environment" to manage all tools and libraries.
 
-### 1. One-Time Setup
-Before you begin, you need to manually download the compiler. Please follow the instructions in **`SETUP-GUIDE.md`**.
+**1. Perform the one-time setup.**
+   - Before you begin, please follow the instructions in **`SETUP-GUIDE.md`** to download the compiler.
 
-### 2. Activate the Environment
-Open a command prompt in this directory and run the activation script. This will set up your `PATH` for the current session.
-env.bat
-code
-Code
-### 3. Build the Libraries
-Once the environment is active, run the main build script. This will clone the source code, compile SuperLU, and then compile SUNDIALS.
-build.bat
-code
-Code
-### 4. Verification
-After the build is complete, the final test executable will be located at:
+**2. Activate the build environment.**
+   - Open a command prompt in this directory and run the activation script: `env.bat`
+
+**3. Run the main build script.**
+   - Once the environment is active, run the main build script: `build.bat`
+
+The script will download and build the libraries. A key test executable can then be run via:
 `.\sundials\build\bin\cvRoberts_dns.exe`
