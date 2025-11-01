@@ -1,0 +1,23 @@
+# Ignore build tools
+/mingw64/
+
+# Ignore the cloned source code directories
+/sundials/
+/superlu/
+
+# Ignore the installation directory and all build directories
+/install/
+/sundials/build/
+/superlu/build/
+
+# Ignore compiled files and build artifacts on Windows
+*.exe
+*.dll
+*.lib
+*.a
+*.o
+
+# Ignore other build system files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
